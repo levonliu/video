@@ -8,6 +8,15 @@ use Auth;
 
 class EntryController extends Controller
 {
+
+    /**
+     * @return string
+     */
+    public function index()
+    {
+        return view( 'admin.entry.index' );
+    }
+
     /**
      * 登录视图
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -34,14 +43,6 @@ class EntryController extends Controller
         }
 
         return redirect( '/admin/login' )->with( 'error', '用户名或密码错误' );
-    }
-
-    /**
-     * @return string
-     */
-    public function index()
-    {
-        return view( 'admin.entry.index' );
     }
 
     /**

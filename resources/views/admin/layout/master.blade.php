@@ -55,7 +55,8 @@
                 <ul class="nav navbar-nav navbar-right" >
                     <li class="dropdown" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >
-                            <i class="fa fa-w fa-user" ></i >{{Auth::guard('admin')->user()->username}} <span class="caret" ></span >
+                            <i class="fa fa-w fa-user" ></i >{{Auth::guard('admin')->user()->username}} <span
+                                    class="caret" ></span >
                         </a >
                         <ul class="dropdown-menu" >
                             <li ><a href="/admin/changePassword" >我的帐号</a ></li >
@@ -135,8 +136,8 @@
     </ul >
 </div >
 </body >
-{{--@include('admin.layout.errors')--}}
-{{--@include('flash::message')--}}
+@include('admin.layout.errors')
+@include('flash::message')
 <script >
     require( [ 'bootstrap' ], function ( $ ) {
         $( '#flash-overlay-modal' ).modal();

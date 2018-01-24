@@ -15,7 +15,7 @@
 <div class="container well">
     <div class="row ">
         <div class="col-md-6">
-            <form method="post" action="">
+            <form method="post" action="/admin/login">
                 {{ csrf_field() }}
                 <div class="form-group ">
                     <label>帐号</label>
