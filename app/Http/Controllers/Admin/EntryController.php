@@ -39,8 +39,8 @@ class EntryController extends Controller
     /**
      * @return string
      */
-    public function index(  )
+    public function index()
     {
-        return '后台。。';
+        return view( 'admin.entry.index' );
     }
 }
