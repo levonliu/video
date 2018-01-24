@@ -43,4 +43,14 @@ class EntryController extends Controller
     {
         return view( 'admin.entry.index' );
     }
+
+    /**
+     * 登出
+     */
+    public function logout()
+    {
+        Auth::guard( 'admin' )->logout();
+
+        return redirect( 'admin/login' );
+    }
 }

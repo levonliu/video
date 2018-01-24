@@ -22,5 +22,7 @@ Route::group( [ 'prefix' => 'admin', 'namespace' => 'Admin' ], function () {
     //登陆处理
     Route::post( '/login', 'EntryController@login' );
     //后台登录主页
-    Route::get( '/index', 'EntryController@index' )->middleware('admin.auth');
+    Route::get( '/index', 'EntryController@index' )->middleware( 'admin.auth' );
+    //登出
+    Route::get( '/logout', 'EntryController@logout' );
 } );
