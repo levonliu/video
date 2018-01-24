@@ -34,4 +34,7 @@ Route::group( [ 'prefix' => 'admin', 'namespace' => 'Admin' ], function () {
 
     //修改密码
     Route::post( '/changePassword', 'MyController@changePassword' );
+
+    //标签管理
+    Route::resource('tag','TagController');
 } );

@@ -59,7 +59,7 @@
                                     class="caret" ></span >
                         </a >
                         <ul class="dropdown-menu" >
-                            <li ><a href="/admin/changePassword" >我的帐号</a ></li >
+                            <li ><a href="/admin/changePassword" >修改密码</a ></li >
                             <li role="separator" class="divider" ></li >
                             <li ><a href="/admin/logout" >退出</a ></li >
                         </ul >
@@ -89,7 +89,7 @@
                 </div >
                 <ul class="list-group menus" >
                     <li class="list-group-item" id="35" >
-                        <a href="/admin/changePassword" >我的资料 </a >
+                        <a href="/admin/changePassword" >修改密码 </a >
                     </li >
                 </ul >
                 <div class="panel-heading" >
@@ -116,24 +116,6 @@
             @yield('content')
         </div >
     </div >
-</div >
-<div class="master-footer" >
-    Powered by hdcms v2.0 © 2014-2019
-</div >
-<script >
-    require( [ 'bootstrap' ] );
-</script >
-<!--右键菜单添加到快捷导航-->
-<div id="context-menu" >
-    <ul class="dropdown-menu" role="menu" >
-        <li ><a tabindex="-1" href="#" >添加到快捷菜单</a ></li >
-    </ul >
-</div >
-<!--右键菜单删除快捷导航-->
-<div id="context-menu-del" >
-    <ul class="dropdown-menu" role="menu" >
-        <li ><a tabindex="-1" href="#" >删除菜单</a ></li >
-    </ul >
 </div >
 </body >
 @include('admin.layout.errors')
