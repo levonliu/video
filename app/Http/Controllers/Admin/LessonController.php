@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\TagRequest;
-use App\Model\Tag;
+use App\Model\Lesson;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TagController extends CommonController
+class LessonController extends CommonController
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class TagController extends CommonController
      */
     public function index()
     {
-        $data = Tag::get();
+        $data = Lesson::get();
 
-        return view( 'admin.tag.index', compact( 'data' ) );
+        return view( 'admin.lesson.index', compact( 'data' ) );
     }
 
     /**
@@ -28,22 +27,19 @@ class TagController extends CommonController
      */
     public function create()
     {
-        return view( 'admin.tag.create' );
+        return view('admin.lesson.create');
     }
 
     /**
-     * 保存新增的标签
+     * Store a newly created resource in storage.
      *
-     * @param TagRequest $request
-     * @param Tag        $model
+     * @param  \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\Response
      */
-    public function store( TagRequest $request, Tag $model )
+    public function store( Request $request )
     {
-        $model->create( $request->all() );
-
-        return redirect( '/admin/tag' );
+        //
     }
 
     /**
@@ -67,9 +63,7 @@ class TagController extends CommonController
      */
     public function edit( $id )
     {
-        $tag = Tag::find( $id );
-
-        return view( 'admin.tag.edit', compact( 'tag' ) );
+        //
     }
 
     /**
@@ -82,11 +76,7 @@ class TagController extends CommonController
      */
     public function update( Request $request, $id )
     {
-        $tag           = Tag::find( $id );
-        $tag[ 'name' ] = $request[ 'name' ];
-        $tag->save();
-
-        return redirect( '/admin/tag' );
+        //
     }
 
     /**
@@ -98,8 +88,6 @@ class TagController extends CommonController
      */
     public function destroy( $id )
     {
-        Tag::destroy( $id );
-
-        $this->success( '删除成功' );
+        //
     }
 }
