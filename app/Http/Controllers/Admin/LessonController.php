@@ -27,7 +27,7 @@ class LessonController extends CommonController
      */
     public function create()
     {
-        return view('admin.lesson.create');
+        return view( 'admin.lesson.create' );
     }
 
     /**
@@ -37,9 +37,25 @@ class LessonController extends CommonController
      *
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request )
+    public function store( Request $request, Lesson $lesson )
     {
-        //
+        $lesson[ 'title' ]     = $request[ 'title' ];
+        $lesson[ 'introduce' ] = $request[ 'introduce' ];
+        $lesson[ 'preview' ]   = $request[ 'preview' ];
+        $lesson[ 'iscommend' ] = $request[ 'iscommend' ];
+        $lesson[ 'ishot' ]     = $request[ 'ishot' ];
+        $lesson[ 'click' ]     = $request[ 'click' ];
+        $lesson->save();
+
+        $videos = json_decode( $request[ 'videos' ], true );
+        foreach ( $videos as $video ) {
+            $lesson->videos()->create( [
+                'title' => $video[ 'title' ],
+                'path'  => $video[ 'path' ],
+            ] );
+        }
+
+        return redirect( 'admin/lesson' );
     }
 
     /**

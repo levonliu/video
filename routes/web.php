@@ -36,8 +36,12 @@ Route::group( [ 'prefix' => 'admin', 'namespace' => 'Admin' ], function () {
     Route::post( '/changePassword', 'MyController@changePassword' );
 
     //标签管理
-    Route::resource('tag','TagController');
+    Route::resource( 'tag', 'TagController' );
 
     //课程
-    Route::resource('lesson','LessonController');
+    Route::resource( 'lesson', 'LessonController' );
 } );
+
+
+Route::any( '/component/uploader', 'Component\UploadController@uploader' );
+Route::any( '/component/filesLists', 'Component\UploadController@filesLists' );

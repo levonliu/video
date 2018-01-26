@@ -145,7 +145,7 @@
                 },
                 methods: {
                     add: function () {
-                        var field = { title: '', path: '', id: 'hd' + Date.parse( new Date() ) };
+                        var field = { title: '', path: '', id: 'lw' + Date.parse( new Date() ) };
                         this.videos.push( field );
                         setTimeout( function () {
                             upload( field );
